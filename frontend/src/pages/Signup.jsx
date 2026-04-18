@@ -8,10 +8,13 @@ export function Signup() {
   const navigate = useNavigate();
 
   const handleSignup = async () => {
-    await axios.post("http://localhost:5000/api/auth/register", {
-      email,
-      password,
-    });
+    await axios.post(
+      "https://task-manager-aaav.onrender.com/api/auth/register",
+      {
+        email,
+        password,
+      },
+    );
     alert("Signup successful");
     navigate("/");
   };

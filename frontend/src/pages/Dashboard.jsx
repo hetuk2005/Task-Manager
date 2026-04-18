@@ -11,7 +11,7 @@ export function Dashboard() {
 
   // FETCH TASKS
   const fetchTasks = async () => {
-    const res = await axios.get("http://localhost:5000/api/tasks");
+    const res = await axios.get("https://task-manager-aaav.onrender.com/api/tasks");
     setTasks(res.data);
   };
 
@@ -23,7 +23,7 @@ export function Dashboard() {
   const addTask = async () => {
     if (!title.trim()) return;
 
-    await axios.post("http://localhost:5000/api/tasks", {
+    await axios.post("https://task-manager-aaav.onrender.com/api/tasks", {
       userId: "user123",
       title,
     });
@@ -34,7 +34,7 @@ export function Dashboard() {
 
   // DELETE TASK
   const deleteTask = async (id) => {
-    await axios.delete(`http://localhost:5000/api/tasks/${id}`);
+    await axios.delete(`https://task-manager-aaav.onrender.com/api/tasks/${id}`);
     fetchTasks();
   };
 
@@ -46,7 +46,7 @@ export function Dashboard() {
 
   // UPDATE TASK
   const updateTask = async () => {
-    await axios.put(`http://localhost:5000/api/tasks/${editId}`, {
+    await axios.put(`https://task-manager-aaav.onrender.com/api/tasks/${editId}`, {
       title: editText,
     });
 
@@ -57,7 +57,7 @@ export function Dashboard() {
 
   // TOGGLE COMPLETE
   const toggleComplete = async (task) => {
-    await axios.put(`http://localhost:5000/api/tasks/${task._id}`, {
+    await axios.put(`https://task-manager-aaav.onrender.com/api/tasks/${task._id}`, {
       completed: !task.completed,
     });
 
